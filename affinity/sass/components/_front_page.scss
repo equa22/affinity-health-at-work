@@ -1,0 +1,73 @@
+.page-node-type-front-page {
+	header {
+		padding: 15px 40px 15px 25px;
+		transition: all 0.5s linear;
+		background-color: transparent;
+		height: 80px;
+		-webkit-box-shadow: 0px 0px 0 0 rgba(0, 0, 0, 0.24);
+	    -moz-box-shadow: 0px 0px 0 0 rgba(0, 0, 0, 0.24);
+	    box-shadow: 0px 0px 0 0 rgba(0, 0, 0, 0.24);
+	    background-size: 250px 100%;
+	    
+		img {
+			transition: all 0.5s linear;
+			height: 73px;
+		}
+
+		@include rsp(mobile)  {
+			height: 55px;
+
+			img {
+				height: 50px;
+			}
+	        
+	    }  
+	}
+	.region-primary-menu nav {
+		padding-top: 140px;
+	}
+
+	footer {
+		margin-top: 0;
+	}
+
+	&.purple-menu {
+		.region-primary-menu nav {
+			padding-top: 100px;
+		}
+		header {
+			background-color: #837cbc;
+			height: 40px;
+			-webkit-box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.24);
+			-moz-box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.24);
+			box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.24);
+
+
+			img {
+				height: 40px;
+			}
+		}
+	}
+	main {
+		padding-bottom: 0;
+	}
+
+	@include rsp(mobile) {
+		.paragraph--type--heading .field--name-field-background-image {
+			position: absolute !important;
+			height: 100% !important;
+		}
+	}
+
+	.paragraph--type--heading:after {
+		display: none;
+	}
+
+	.paragraph--type--heading {
+		padding-bottom: 0;
+
+		@include rsp(small) {
+			padding-bottom: 50px;
+		}
+	}
+}

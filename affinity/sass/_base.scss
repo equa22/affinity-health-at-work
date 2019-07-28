@@ -1,0 +1,200 @@
+$primary: white;
+$grey-darker: #505050;
+$grey-dark: #3e3e3e;
+$grey-light: #eeeeee;
+$purple-dark: #837cbc;
+$purple-light: #b2acd6;
+$purple-lila: #e3e0fa;
+$yellow-light: #e6d9a9;
+$yellow-dark: #d3d2a6;
+
+$container: 1024px;
+
+$header-height: 70px;
+$admin-menu-height: 39px;
+$admin-menu-full-height: 78px; 
+$menu-speed: 0.5s;
+
+$font-big: 35px;
+$font-normal: 20px;
+$font-text: 17px;
+$font-small: 15px;
+
+$small-content: 661px;	// used for smaller content (desc in heading)
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700,800');
+
+$mobile-p: 15px;
+$tablet-p: 20px;
+
+@mixin flex (){
+  display: -webkit-box;     
+  display: -moz-box;        
+  display: -ms-flexbox;     
+  display: -webkit-flex;  
+  display: flex;   
+};
+
+@mixin flex-s ($horizontal:center, $vertical:center, $direction:column){
+  display: -webkit-box;     
+  display: -moz-box;        
+  display: -ms-flexbox;     
+  display: -webkit-flex;  
+  display: flex; 
+  -webkit-justify-content: $horizontal;
+  -moz-justify-content: $horizontal;
+  -ms-justify-content: $horizontal;
+  -o-justify-content: $horizontal;
+  -webkit-justify-content: $horizontal;
+  -moz-justify-content: $horizontal;
+  -ms-justify-content: $horizontal;
+  justify-content: $horizontal;
+  -webkit-align-content: $vertical;
+  -moz-align-content: $vertical;
+  -ms-align-content: $vertical;
+  align-content: $vertical;
+  -webkit-align-items: $vertical;
+  -moz-align-items: $vertical;
+  -ms-align-items: $vertical;
+  align-items: $vertical;
+  -webkit-flex-direction: $direction;
+  -moz-flex-direction: $direction;
+  -ms-flex-direction: $direction;
+  flex-direction: $direction;
+};
+
+@mixin grow ($number){
+    flex-grow: $number;
+};
+
+@mixin direction ($direction){
+    -webkit-flex-direction: $direction;
+    -moz-flex-direction: $direction;
+    -ms-flex-direction: $direction;
+    flex-direction: $direction;
+};
+
+@mixin wrap (){
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+};
+
+$break-small: 375px;
+$break-large: 1024px;
+
+@mixin rsp($media) {
+  @if $media == mobile {
+    @media only screen and (max-width: $break-small) { @content; }
+  }
+  @else if $media == small {
+    @media only screen and (max-width: $break-large - 1) { @content; }
+  }
+  @else if $media == tablet {
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) { @content; }
+  }
+  @else if $media == desktop{
+    @media only screen and (min-width: $break-large) { @content; }
+  }
+}
+
+@mixin trans($value:0.2s all ease-in-out) {
+  transition: $value;
+}
+main {
+	width: 100%;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+/*
+  &.user-logged-in {
+    header, 
+    .region-primary-menu,
+    .paragraph--type--heading {
+      top: $admin-menu-height;
+    }
+  }
+  &.toolbar-tray-open, {
+    header, 
+    .region-primary-menu,
+    .paragraph--type--heading {
+      top: $admin-menu-full-height;
+    }
+  }*/
+}
+
+.curve {
+    position: absolute;
+    pointer-events: none;
+    width: 100%;
+    left: 0;
+    bottom: -2px;
+    -webkit-object-fit: cover;
+    -moz-object-fit: cover;
+    object-fit: cover;
+    z-index: 20;
+
+    &.up {
+      top: -45px;
+    }
+    &.down {
+      bottom: -45px;
+      background-color: #eeeeee;
+    }
+
+    @include rsp(small) {
+      display: none;
+    }
+}
+
+.path-user {
+  &:not(.user-logged-in) {
+    header, footer {
+      display: none;
+    }
+
+    input[type="submit"] {
+      box-shadow: none;
+      border-radius: 4px;
+      background-color: #ffffff;
+      border: solid 2px #847cbc;
+      color: #847cbc;
+      padding: 8px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      @include trans();
+
+      &:hover {
+        color: white;
+        background-color: #847cbc;
+      }
+    }
+    .js-form-required {
+      color: #847cbc;
+    }
+    .description {
+      color: #bebeb9;
+    }
+  }
+  &.user-logged-in {
+    main {
+        margin-top: 0;
+        display: flex;
+        padding: 180px 0;
+        text-align: center;
+        color: #847cbc;
+
+        .layout-content {
+          width: 100%;
+          text-align: center;
+        }
+    }
+  }
+  .curve {
+    display: none;
+  }
+}

@@ -1,0 +1,41 @@
+.page-node-type-under-construction {
+
+	header,
+	.region-primary-menu,
+	.region-secondary-menu,
+	.node__meta {
+		display: none;
+	}
+
+	main {
+		height: 100vh;
+		width: 100vw;
+		@include flex-s();
+
+		.node__content {
+			text-align: center;
+			color: $purple-light;
+
+			strong {
+				color: $purple-dark;
+			}
+
+			a {
+		    background-color: transparent;
+		    text-decoration: none;
+		    color: #b2acd6;
+		    position: relative;
+
+		    &:after {
+			    position: absolute;
+			    content: "";
+			    height: 2px;
+			    bottom: -2px;
+			    width: 100%;
+			    background-color: #b2acd6;
+			    left: 0;
+		    }
+			}
+		}
+	}
+}

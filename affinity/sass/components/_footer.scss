@@ -1,0 +1,211 @@
+.page-node-type-under-construction {
+	footer {
+		display: none;
+	}
+}
+main {
+	//padding-bottom: 150px;
+}
+footer {
+	background-color: $grey-darker;
+
+	.curve {
+		position: absolute;
+	}
+
+	#block-basicsubscribelink {
+		background-color: #817eb8;
+		text-align: center;
+		padding: 25px 15px;
+		font-size: 19px;
+		color: #B1ADD5;
+		font-weight: 700;
+		position: relative;
+
+		p {
+			margin: 0;
+		}
+		a {
+			text-decoration: none;
+			color: white;
+
+			&:hover {
+				color: $purple-lila;
+			}
+		}
+	}
+	#block-footer-2  {
+		position: relative;
+		width: 100%;
+
+	    .menu {
+	    	display: -webkit-box;
+		    display: -moz-box;
+		    display: -ms-flexbox;
+		    display: -webkit-flex;
+		    display: flex;
+		    width: 984px;
+		    margin: auto;
+		    padding: 60px 20px;
+		    @include wrap();
+
+		    @include rsp(small)  {
+	    		width: calc(100% - 40px);
+	    		padding: 0 20px;
+		    }
+
+		    li {
+		    	width: 50%;
+
+		    	a {
+						color: #bebebe;
+				    text-decoration: none;
+				    text-transform: uppercase;
+				    font-weight: 500;
+				    font-size: 14px;
+				    line-height: 40px;
+
+				    &.is-active {
+				    	color: white;
+				    }
+				    &:hover {
+				    	color: white;
+				    }
+		    	}
+		    	&:nth-child(2n) {
+			    	text-align: right;
+			    }
+		    }
+		    @include rsp(small)  {
+		    	width: calc(100% - 40px);
+		    	padding: 60px 20px;
+		    }
+	    }
+
+	    
+	    @include rsp(mobile) {
+	    	ul li {
+	    		width: 100%;
+	    		text-align: left !important;
+	    	}
+	    }
+	}
+	.field--name-field-link {
+		width: $container;
+		margin: auto;
+		@include flex();
+		padding: 60px 0;
+
+		@include rsp(small) {
+  			width: 100%;
+  			@include wrap();
+		}
+		@include rsp(mobile) {
+  			@include direction(column);
+  			@include flex-s(center, center);
+
+  			.field__item {
+  				width: calc(100% - 40px);
+  				margin-left: 20px;
+  				margin-top: 15px 0 0 0;
+  			}
+		}
+
+		.field__item {
+			-webkit-flex-grow: 1;
+			-moz-flex-grow: 1;
+			-ms-flex-grow: 1;
+			flex-grow: 1;
+			padding: 0 20px;
+    		max-width: 25%;
+    		color: #505050;
+
+    		@include rsp(mobile) {
+    			max-width: calc(100% - 40px);
+			    width: 100%;
+			    margin-bottom: 15px;
+			    margin-left: 0;
+    		}
+			a {
+				color: #bebebe;
+				border: solid 3px #bebebe;
+				height: 50px;
+				@include flex-s();
+				text-decoration: none;
+				border-radius: 7px;
+				font-size: 15px;
+				font-weight: 500; 
+				text-align: center;
+				@include trans();
+
+				&:hover {
+					color: $grey-darker;
+					background-color: #bebebe;
+				}
+			}
+		}
+	}
+
+	#block-footer {
+		p {
+			display: flex;
+		    justify-content: center;
+		    align-items: center;
+		    margin: 0;
+
+		    a {
+		    	color: #bebebe;
+		    	text-decoration: none;
+		    	font-size: 15px;
+		    	font-weight: 500; 
+		    	text-transform: uppercase;
+
+		    	&:hover {
+		    		color: white;
+		    	}
+
+		    	&:nth-child(2) {
+		    		background-image: url(http://affinityhealthatwork.co.uk/themes/affinity/images/Footer_Curve.png);
+				    background-size: cover;
+				    width: 350px;
+				    height: 85px;
+				    @include flex-s();
+		    	}
+		    }
+
+		    img {
+		    	height: 50px;
+		    	margin: 0 55px;
+		    }
+		}
+    	@include rsp(mobile) {
+			
+
+			p {
+				@include wrap();
+				-webkit-flex-direction: column-reverse;
+				-ms-flex-direction: column-reverse;
+				flex-direction: column-reverse;
+
+				a {
+					width: calc(100% - 20px);
+					order: 2;
+					text-align: center;
+					margin-bottom: 15px;
+					padding-left: 20px;
+					text-align: left;
+
+					img {
+						height: 50px;
+					}
+					&:nth-child(2) {
+						order: 1;
+						padding: 0;
+						text-align: center;
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+}

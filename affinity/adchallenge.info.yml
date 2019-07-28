@@ -1,0 +1,8 @@
+name: Agiledrop Challenge
+type: theme
+base theme: classy
+description: 'Theme for Agiledrop Front-end challenge, which is used by developer.'
+version: 1.0
+core: 8.x
+libraries:
+ - adchallenge/global-styling

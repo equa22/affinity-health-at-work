@@ -1,0 +1,145 @@
+/*
+ * Import fonts
+ */
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display|Ubuntu");
+/* line 5, ../sass/style.scss */
+.ubuntu, main .views-row article .node__content .field--name-field-tags a {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 100;
+}
+
+/* line 9, ../sass/style.scss */
+.playfair, body {
+  font-family: 'Playfair Display', serif;
+  font-weight: 300;
+}
+
+/*
+ * Helpers
+ */
+/* line 18, ../sass/style.scss */
+.flex, header .region-header, header .region-header nav ul, footer .region nav ul {
+  display: flex;
+}
+
+/* line 21, ../sass/style.scss */
+.transition, main .views-row article h2 a {
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+/*
+ * Variables
+ */
+/* line 49, ../sass/style.scss */
+.base-width, header, main, footer .region {
+  width: 1061px;
+  margin: auto;
+}
+
+/* line 56, ../sass/style.scss */
+header .region-header {
+  height: 165px;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+}
+/* line 61, ../sass/style.scss */
+header .region-header #block-adchallenge-branding img {
+  height: 20px;
+}
+/* line 65, ../sass/style.scss */
+header .region-header nav {
+  flex-grow: 1;
+}
+/* line 68, ../sass/style.scss */
+header .region-header nav ul {
+  justify-content: flex-end;
+  align-content: center;
+  align-items: center;
+}
+/* line 71, ../sass/style.scss */
+header .region-header nav ul li {
+  margin-left: 98px;
+}
+/* line 74, ../sass/style.scss */
+header .region-header nav ul li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #626262;
+  position: relative;
+}
+
+/* line 89, ../sass/style.scss */
+main .views-row {
+  width: calc(50% - 32px);
+  display: inline-flex;
+}
+/* line 93, ../sass/style.scss */
+main .views-row article {
+  margin-bottom: 30px;
+}
+/* line 97, ../sass/style.scss */
+main .views-row article h2 a {
+  color: #626262;
+}
+/* line 104, ../sass/style.scss */
+main .views-row article .node__content img {
+  width: 100%;
+  margin-bottom: 30px;
+  -webkit-filter: grayscale(80%);
+  filter: grayscale(80%);
+}
+/* line 111, ../sass/style.scss */
+main .views-row article .node__content .field--name-field-tags a {
+  color: #b4ad9e;
+  text-transform: uppercase;
+}
+/* line 119, ../sass/style.scss */
+main .views-row article .node__content p {
+  color: #626262;
+  font-size: 14px;
+  line-height: 24px;
+}
+/* line 127, ../sass/style.scss */
+main .views-row:nth-child(2n - 1) {
+  margin-right: 60px;
+}
+
+/* line 133, ../sass/style.scss */
+footer {
+  background-color: #f0f0f0;
+  padding: 40px 0;
+}
+/* line 145, ../sass/style.scss */
+footer .region nav ul li {
+  margin-right: 20px;
+}
+/* line 148, ../sass/style.scss */
+footer .region nav ul li a {
+  color: #626262;
+}
+
+/* line 157, ../sass/style.scss */
+a {
+  text-decoration: none;
+  position: relative;
+}
+/* line 163, ../sass/style.scss */
+a.line:hover::after, header .region-header nav ul li a:hover::after, main .views-row article h2 a:hover::after, main .views-row article .node__content .field--name-field-tags a:hover::after, footer .region nav ul li a:hover::after {
+  position: absolute;
+  background-color: #b4ad9e;
+  width: 100%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  content: "";
+}
+
+/* line 175, ../sass/style.scss */
+body {
+  background-color: red;
+}

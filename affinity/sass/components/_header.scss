@@ -1,0 +1,98 @@
+$header-padding-top: 15px;
+$header-padding-left: 40px;
+
+header {
+    width: calc(100% - 65px);
+    background-color: transparent;
+    z-index: 12;
+    transition: 0.1s z-index ease-in-out calc(#{$menu-speed} + 0.1s), 0s background-color ease-in-out calc(#{$menu-speed} + 0.1s);
+    height: calc(#{$header-height} - 2* #{$header-padding-top});
+    padding: $header-padding-top 40px $header-padding-top 20px;
+    position: absolute;
+    top: 0;
+    background-image: url(http://affinityhealthatwork.co.uk/themes/affinity/images/logo_bg2.png);
+    background-repeat: no-repeat;
+    background-position: 0;
+    background-size: 150px 100%;
+
+    @include rsp(mobile)  {
+      width: calc(100% - 30px);
+      padding: 15px !important;
+    }
+
+    .region-header {
+      @include flex();
+    }
+    img {
+      transition: 0s opacity ease-in-out calc(#{$menu-speed} + 0.1s);
+      height: calc(#{$header-height} - 2* #{$header-padding-top});    
+    }
+    .toggle {
+      color: $primary;
+      font-weight: 700;
+      transition: 0.3s color ease-in-out calc(#{$menu-speed} + 0.1s);
+      @include flex-s(flex-end, center, row);
+      cursor: pointer;
+      text-shadow: 2px 2px 2px rgba(150, 150, 150, 0.43);
+
+      .x-wrap {
+        position: relative;
+        width: 25px;
+        height: 23px;
+        display: inline-block;
+        margin-left: 12px;
+
+        span {
+          width: 100%;
+          height: 3px;
+          position: absolute;
+          top: 10px;
+          left: 0;
+          background-color: $primary;
+          opacity: 1;
+          -webkit-box-shadow: 0px 3px 5px 0px rgba(50, 50, 50, 0.5);
+          -moz-box-shadow: 0px 3px 5px 0px rgba(50, 50, 50, 0.5);
+          box-shadow: 0px 2px 7px 0px rgba(50, 50, 50, 0.3);
+          -webkit-transform: rotate(0deg);
+          -moz-transform: rotate(0deg);
+          -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+          transition: opacity 0.3s linear, left 0.3s linear, top 0.3s linear 0.3s, transform 0.3s linear 0.3s;
+
+          &:first-child {
+            top: 0;
+          }
+          &:last-child {
+            top: 20px;
+          }
+        }
+      }
+    }
+    #block-togglemenu {
+      @include grow(1);
+      text-align: right;
+    }
+    .site-name {
+      display: none;
+    }
+}
+
+
+.path-frontpage {
+  header {
+    background-color: transparent;
+  }
+}
+
+/*
+body.menu-opened {
+  header {
+    transition: none;
+    img {
+      transition: none;
+    }
+    .toggle {
+      transition: none;
+    }
+  }
+}*/

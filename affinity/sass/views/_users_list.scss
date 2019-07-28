@@ -1,0 +1,124 @@
+.view-users-list {
+	padding-top: 80px;
+	background-color: white;
+	padding-bottom: 150px;
+
+	@include rsp(mobile) {
+		padding-top: 40px;
+	}
+	.view-content {
+	    display: flex;
+	    
+	    position: relative;
+	    width: 100%;
+	    flex-direction: column;
+	}
+
+	.views-row {
+	    padding-left: 395px;
+	    margin-bottom: 90px;
+	    width: 629px;
+	    margin: 0 auto 90px auto;
+	    position: relative;
+
+	    
+
+		 a {
+		    height: 50px;
+		    position: absolute;
+		    top: 270px;
+		    left: 16px;
+		    background-color: #b1acd6;
+		    width: 304px;
+		    color: white;
+		    text-decoration: none;
+		    display: flex;
+		    justify-content: center;
+		    align-items: center;
+		    opacity: 0;
+		    transition: opacity 0.5s linear;
+		    text-transform: uppercase;
+		    font-size: 16px;
+	    	font-weight: 700;
+	    	@include trans();
+
+		    &.reveal {
+		    	opacity: 1;
+		    }
+		    &:hover {
+		    	background-color: white;
+    			color: #b1acd6;
+		    }
+		}
+		@include rsp(mobile) {
+	    	padding-left: 0;
+	    	padding-top: calc(100vw + 45px);
+	    	width: 100%;
+	    	margin-bottom: 40px;
+
+	    	a {
+	    		width: calc(100vw - 2*15px);
+			    left: 15px;
+			    top: calc(100vw - 2*20px);
+	    	}
+	    }
+	    @include rsp(tablet) {
+		    width: calc(100% - 310px);
+		    margin-bottom: 40px;
+		    padding-left: 270px;
+
+		    a {
+		    	width: 250px;
+			    left: 0;
+			    top: 250px;
+		    }
+	    }
+
+	}
+	img {
+	    width: 335px;
+	    height: 335px;
+	    object-fit: cover;
+	    position: absolute;
+	    left: 0;
+	    top: 0;
+
+	    @include rsp(tablet) {
+	    	width: 250px;
+	    	height: 250px;
+	    	left: 0;
+	    }
+	    @include rsp(mobile) {
+	    	width: calc(100vw - 2* #{$mobile-p});
+	    	padding: 0 $mobile-p;
+	    }
+	}
+
+	.views-field-field-name {
+		font-size: 25px;
+		color: $purple-dark;
+		font-weight: 700;
+
+		@include rsp(mobile) {
+	    	width: calc(100% - 2* #{$mobile-p});
+	    	padding: 0 $mobile-p;
+	    }
+	}
+	.views-field-field-title {
+		font-size: 16px;
+		color: #b1acd6;
+		font-weight: 700;
+		@include rsp(mobile) {
+	    	width: calc(100% - 2* #{$mobile-p});
+	    	padding: 0 $mobile-p;
+	    }
+	}
+	.views-field-body {
+		width: 100%;
+
+		@include rsp(mobile) {
+	    	width: calc(100% - 2* #{$mobile-p});
+	    	padding: 0 $mobile-p;
+	    }
+	}
+}

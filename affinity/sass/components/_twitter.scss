@@ -1,0 +1,75 @@
+div#block-twitterblock {
+	text-align: center;
+	font-size: 25px;
+	color: $purple-dark;
+	font-weight: 700;
+	background-color: #F2EFF0;
+	padding-bottom: 100px;
+	transition: max-height 0.5s linear;
+	max-height: 200px;
+	position: relative;
+	overflow: hidden;
+
+	&::after {
+	    position: absolute;
+	    height: 80px;
+	    width: 80px;
+	    background-image: url(../images/loader.svg);
+	    background-size: cover;
+	    background-repeat: no-repeat;
+	    background-position: center;
+	    content: "";
+	    left: calc(50% - 40px);
+	    opacity: 1;
+		transition: opacity 0.5s linear;
+	}
+
+	* {
+		transition: opacity 0.5s linear;
+		opacity: 0;
+	}
+	iframe {
+		opacity: 0;
+		transition: opacity 0.5s linear;
+		width: 100% !important;
+	}
+	&.show {
+		//max-height: 800px;
+		* {
+			opacity: 1;
+		}
+
+		
+
+		iframe {
+			opacity: 1;
+			z-index: 1;
+			//height: 375px !important;
+		}
+		&::after {
+			opacity: 0;
+			z-index: 0;
+		}
+	}
+
+	h2 {
+		padding: 65px 0 60px 0;
+		margin: 0;
+		position: relative;
+		font-size: 25px;
+		/*&::after {
+		    position: absolute;
+		    height: 80px;
+		    width: 80px;
+		    background-image: url(../images/loader.svg);
+		    background-size: cover;
+		    background-repeat: no-repeat;
+		    background-position: center;
+		    bottom: -100px;
+		    content: "";
+		    left: calc(50% - 40px);
+		    opacity: 1;
+			transition: opacity 0.5s linear;
+		}*/
+	}
+}

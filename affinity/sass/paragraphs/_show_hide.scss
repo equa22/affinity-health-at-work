@@ -1,0 +1,197 @@
+$content-width: 945px;
+
+.field--name-field-block {
+    font-size: 25px;
+    font-weight: 700;
+    margin: 50px auto 15px auto;
+    color: #b1acd6;
+    width: $content-width;
+
+    @include rsp(mobile) {
+		padding: 0 $mobile-p;
+		width: calc(100% - 2 * #{$mobile-p});
+	}
+	@include rsp(tablet) {
+		padding: 0 $tablet-p;
+		width: calc(100% - 2 * #{$tablet-p});
+	}
+}
+.paragraph--type--show-hide-block {
+	padding-top: 30px;
+	background-color: white;
+	padding-bottom: 50px;
+}
+.paragraph--type--show-hide-item {
+	width: $content-width;
+	margin: auto;
+	border: solid 3px $purple-dark;
+	border-radius: 8px;
+	margin-top: 30px;
+	overflow: hidden;
+	padding-bottom: 0;
+	transition: 0.5s padding ease-in-out;
+
+	* {
+		font-size: 15px !important;
+		font-family: 'Open Sans', sans-serif !important;
+	}
+
+	sup {
+		font-size: 75% !important;
+	}
+
+	@include rsp(mobile) {
+		width: calc(100% - 34px);
+		border: solid 2px $purple-dark;
+		margin-top: 20px;
+	}
+	@include rsp(tablet) {
+		width: calc(100% - 2 * #{$tablet-p});
+	}
+	&:not(.open) .field--name-field-title:hover {
+		background-color: #e3e0fa;
+	}
+	.field--name-field-title {
+		color: $purple-dark;
+		cursor: pointer;
+		padding: 20px 35px 20px 35px;
+		font-size: 20px;
+		font-weight: 700;
+		position: relative;
+
+		@include rsp(mobile) {
+		    padding: 15px 30px  15px 15px;
+		    font-size: 17px;
+
+		}
+    
+		
+		&::after {
+			position: absolute;
+		    content: "";
+			height: 13px;
+		    width: 15px;
+		    background-image: url(../images/arrow.svg);
+		    right: 28px;
+		    top: 26px;
+		    -webkit-transform: rotate(90deg);
+		    -moz-transform: rotate(90deg);
+		    -ms-transform: rotate(90deg);
+		    transform: rotate(90deg);
+		    transition: 0.1s all ease-in-out;
+		    background-size: cover;
+
+		    @include rsp(mobile) {
+		    	height: 11px;
+    			width: 14px;
+			    right: 15px;
+			    top: 20px;
+		    }
+		}
+	}
+
+	.field--name-field-text-content,
+	.field--name-field-attachment {
+		max-height: 0;
+		overflow: hidden;
+		padding: 0 35px;
+		transition: 0.5s max-height ease-in-out;
+
+		a {
+			color: $purple-dark;
+			text-decoration: none;
+			* {
+				color: $purple-dark !important;
+				text-decoration: underline;
+
+				&:hover {
+					color: $purple-light !important
+
+				} 
+			}
+
+			&:hover {
+				color: $purple-light;
+			}
+		}
+
+		@include rsp(mobile) {
+			padding: 0 15px;
+		}
+	}
+	.field--name-field-attachment {
+		@include flex();
+		@include wrap();
+
+		.field__item {
+			width: calc(33.33% - 10px);
+			margin-bottom: 10px;
+			padding: 0;
+			margin-right: 15px;
+
+			&:nth-child(3n) {
+				margin-right: 0;
+			}
+
+			.file {
+				width: 100%;
+
+				&:hover {
+					color: white;
+				}
+			}
+		}
+	}
+
+	&.open {
+		padding-bottom: 25px;
+		
+		.field--name-field-title {
+			//background-color: #e3e0fa;
+			&::after {
+				-webkit-transform: rotate(0);
+				-moz-transform: rotate(0);
+				-ms-transform: rotate(0);
+				transform: rotate(0);
+			}
+		}
+		.field--name-field-text-content,
+		.field--name-field-attachment {
+			max-height: 1000px;
+		}
+	}
+	.file {
+	    border: solid 3px #b1acd6;
+	    color: #b1acd6;
+	    border-radius: 8px;
+	    cursor: pointer;
+	    padding: 0;
+	    background-image: none;
+
+	    a {
+			background-image: url(../images/download1.svg);
+		    background-position: 18px 6px;
+		    padding: 12px 35px 12px 60px;
+		    background-repeat: no-repeat;
+		    background-size: 25px 38px;
+		    white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: block;
+		}
+
+		&:hover {
+			color: white;
+			width: 100%;
+
+			a {
+				background-image: url(../images/download2.svg);
+				background-color: #b1acd6;
+				color: white;
+				
+			}
+			
+		}
+	}
+}
+

@@ -1,0 +1,55 @@
+.paragraph--type--text {
+	text-align: center;
+	padding-top: 60px;
+	padding-bottom: 50px;
+	background-color: white;
+
+	.field--type-text-long {
+		width: $small-content;
+		margin: auto;
+
+		@include rsp(tablet) {
+			width: calc(100% - 2* #{$tablet-p});
+		}
+		@include rsp(mobile) {
+			width: calc(100% - 2* #{$mobile-p});
+		}
+	}
+	a {
+		text-decoration: none;
+		color: $purple-dark;
+
+		&:hover {
+			color: $purple-light;
+		}
+	}
+	
+}
+.paragraph--type--left-aligned-text {
+	width: $small-content;
+    text-align: left;
+    margin: auto;
+    padding-top: 60px;
+    background-color: white;
+    padding-bottom: 50px;
+    padding: 60px calc(50% - #{$small-content}/2) 50px calc(50% - #{$small-content}/2);
+
+	@include rsp(tablet) {
+		width: calc(100% - 2* #{$tablet-p});
+		padding-left: $tablet-p;
+		padding-right: $tablet-p;
+	}
+	@include rsp(mobile) {
+		width: calc(100% - 2* #{$mobile-p});
+		padding-left: $mobile-p;
+		padding-right: $mobile-p;
+	}
+	p {
+		margin: 0;
+    	padding: 0;
+
+    	&.purple {
+    		color: $purple-dark;
+    	}
+	}   
+}
